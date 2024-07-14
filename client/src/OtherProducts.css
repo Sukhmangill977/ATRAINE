@@ -1,0 +1,32 @@
+/* client/src/OtherProducts.css */
+.other-products {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .other-products h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .other-products ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .other-products li {
+    margin-bottom: 8px;
+  }
+  
+  .other-products a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .other-products a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,72 @@
+/* client/src/Trainings.css */
+.trainings {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: url('https://images.pexels.com/photos/34578/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  background-size: cover;
+  color: #fff; /* Ensure text is visible against the background */
+}
+
+.trainings h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.training-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.training-item {
+  background: rgba(249, 249, 249, 0.9); /* Slightly transparent background */
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.training-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333; /* Ensure headings are readable */
+}
+
+.training-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.perks-box {
+  background: rgba(240, 240, 240, 0.9); /* Slightly transparent background */
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: left;
+  color: #333; /* Ensure text is readable */
+}
+
+.perks-box h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.perks-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.perks-box ul li {
+  margin-bottom: 1rem;
+}
+
+.perks-box a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.perks-box a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,20 @@
+/* client/src/Recommendation.css */
+
+.recommendation-container {
+  text-align: center;
+  padding: 2rem;
+  background: url('https://images.pexels.com/photos/3760081/pexels-photo-3760081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  background-size: cover;
+  min-height: 100vh; /* Adjust as needed */
+  display: flex;
+  flex-direction: column; /* Ensures items are stacked vertically */
+  justify-content: center;
+  align-items: center;
+}
+
+.recommendation-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 2rem; /* Adjust space between text and image */
+}

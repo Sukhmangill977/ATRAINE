@@ -1,0 +1,128 @@
+/* client/src/Home.css */
+.home {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.home-header {
+  background: url('https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg?auto=compress&cs=tinysrgb&w=800') no-repeat center center/cover;
+  color: #fff;
+  padding: 15rem 0;
+}
+
+.home-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-header p {
+  font-size: 1.5rem;
+}
+
+.hero {
+  position: relative;
+  margin-top: 3rem;
+  background: url('https://images.pexels.com/photos/6913721/pexels-photo-6913721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  color: #fff;
+  padding: 15rem 0;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
+}
+
+.hero-text {
+  text-align: center;
+  z-index: 1; /* Ensure text is above background image */
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.hero-text button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #9dccff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #3f78b4;
+}
+
+.additional-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10rem 0;
+  margin-top: 3rem;
+  background: url('https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  background-size: cover;
+}
+
+.left-box{
+  width: 500px;
+  height: 400px; /* Adjust height as needed */
+  margin-left: 20 px;
+  margin-right: 200 px;
+}
+.right-box {
+  width: 500px;
+  height: 100px; /* Adjust height as needed */
+  margin-top: 150px;
+  
+}
+
+.left-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 500px;
+  
+}
+
+.image-slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-slider img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.right-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  margin-right: 90px;
+}
+
+.perks-link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer {
+  margin-top: 2rem;
+}

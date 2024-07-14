@@ -1,0 +1,59 @@
+/* client/src/PerksPage.css */
+.perks-page {
+  background: url('https://images.pexels.com/photos/4069535/pexels-photo-4069535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+  background-size: cover;
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.perks-box {
+  padding: 2rem;
+  background-color: rgba(249, 249, 249, 0.9); /* Slightly transparent background */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  margin-top: 100px;
+}
+
+.perks-box h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.perks-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.perks-box ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+.perks-box li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.perks-box a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.perks-box a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .perks-box {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}
