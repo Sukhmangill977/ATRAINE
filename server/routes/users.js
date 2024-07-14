@@ -8,8 +8,15 @@ const router = express.Router();
 // Get user profile
 router.get('/profile', auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user).select('-password');
-    if (!user) return res.status(404).json({ msg: 'User not found' });
+    const email = req.email
+    const user = await User.findOne({ email }).select('-password');
+    console.log(user)
+
+    if (!user) {
+      return res.status(404).json({ msg: 'User not found' });
+    }
+
+    // Send user profile data
     res.json(user);
   } catch (err) {
     console.error(err.message);
@@ -18,3 +25,4 @@ router.get('/profile', auth, async (req, res) => {
 });
 
 module.exports = router;
+

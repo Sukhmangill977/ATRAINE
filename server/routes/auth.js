@@ -1,39 +1,75 @@
 // routes/auth.js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
-// Register a new user
-router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
+router.post(
+  "/signup",
 
-  try {
-    // Check if user already exists
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ message: "User already exists" });
+  async (req, res) => {
+    const validateUser = await User.findOne({ email: req.body.email });
+    if (validateUser) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Email id already exist" });
     }
 
-    // Create new user
-    const hashedPassword = await bcrypt.hash(password, 12);
-    user = new User({ email, password: hashedPassword });
-    await user.save();
+    try {
+      const myPlaintextPassword = req.body.password;
+      const salt = bcrypt.genSaltSync(10);
+      const hash = bcrypt.hashSync(myPlaintextPassword, salt);
+      const { email, name, bio, age, address, phone, gender } = req.body;
 
-    // Generate JWT token
-    const token = jwt.sign(
-      { email: user.email, id: user._id },
-      process.env.JWT_SECRET,
-      { expiresIn: '1h' }
-    );
+      try {
+        const user = new User({
+          name,
+          email,
+          password: hash,
+          bio,
+          age,
+          address,
+          phone,
+          gender
+        }); await user.save();
+      } catch (error) {
+        console.error("Error creating document:", error);
+      }
 
-    res.status(201).json({ result: user, token });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Something went wrong" });
+      // Instead of returning just progressVlue, return the entire userDetail object
+
+      return res
+        .status(200)
+        .json({ success: true, message: "successfully signup" });
+    } catch (error) {
+      res.status(400).json({ success: false, message: error.keyValue });
+    }
+  },
+);
+
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
+  const JWT_TOKEN = process.env.JWT_TOKEN;
+  if (!user) {
+    return res.status(400).json({ success: false, message: "User Not found" });
   }
+
+  const passwordCompare = await bcrypt.compare(password, user.password);
+  if (passwordCompare) {
+    const data = {
+      email: user.email,
+    };
+
+    const authToken = jwt.sign(data, JWT_TOKEN);
+    return res.status(200).json({ success: true, authtoken: authToken });
+  }
+
+  return res.status(400).json({
+    success: false,
+    message: "Please try to login with the correct credentials",
+  });
 });
 
 module.exports = router;
-

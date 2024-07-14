@@ -10,8 +10,10 @@ const Profile = () => {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No token found');
 
-        const res = await axios.get('http://localhost:5001/api/auth/profile', {
-          headers: { Authorization: `Bearer ${token}` },
+        const res = await axios.get('http://localhost:5001/api/users/profile/', {
+          headers: {
+            'token': token
+          }
         });
 
         setUser(res.data);
@@ -28,10 +30,16 @@ const Profile = () => {
   return (
     <div>
       <h2>Profile</h2>
+      <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
-      <p>Status: {user.status}</p>
+      <p>Bio: {user.bio}</p>
+      <p>Age: {user.age}</p>
+      <p>Address: {user.address}</p>
+      <p>Phone: {user.phone}</p>
+      <p>Gender: {user.gender}</p>
     </div>
   );
 };
 
 export default Profile;
+
