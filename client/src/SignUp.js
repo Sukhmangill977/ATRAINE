@@ -21,7 +21,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5001/api/auth/signup', credentials);
+      const res = await axios.post('https://atraine.onrender.com/api/auth/signup', credentials);
       if (res.status === 200) {
         navigate("/login");
       }

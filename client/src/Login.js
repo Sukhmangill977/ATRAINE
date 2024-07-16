@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5001/api/auth/login', { email, password });
+      const res = await axios.post('https://atraine.onrender.com/api/auth/login', { email, password });
 
       if (res.status === 200) {
         localStorage.setItem('token', res.data.authtoken);

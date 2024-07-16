@@ -10,7 +10,7 @@ const Profile = () => {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No token found');
 
-        const res = await axios.get('http://localhost:5001/api/users/profile/', {
+        const res = await axios.get('https://atraine.onrender.com/api/users/profile/', {
           headers: {
             'token': token
           }
