@@ -8,7 +8,7 @@ const SignUp = () => {
     name: "",
     email: "",
     password: "",
-    bio: "",
+    EducationLevel: "",
     age: "",
     address: "",
     phone: "",
@@ -61,9 +61,9 @@ const SignUp = () => {
           onChange={handleChange}
         />
         <textarea
-          name="bio"
-          placeholder="Bio"
-          value={credentials.bio}
+          name="Education Level"
+          placeholder="Education Level"
+          value={credentials.EducationLevel}
           onChange={handleChange}
         />
         <input

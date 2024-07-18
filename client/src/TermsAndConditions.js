@@ -1,4 +1,3 @@
-// client/src/TermsConditions.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,13 +14,15 @@ const TermsConditions = () => {
       <p>We may update these Terms & Conditions from time to time. The updated version will be posted on this page, and we encourage you to review it regularly.</p>
 
       <h3>3. Use of Services</h3>
-      <p>Our services are intended for users who are at least 18 years old. By using our services, you represent and warrant that you meet this age requirement.</p>
+      <p>
+        Our services are intended for users who are at least 18 years old. By using our services, you represent and warrant that you meet this age requirement. In accordance with the Information Technology Act, 2000 of India, this minimum age is established.
+      </p>
 
       <h3>4. User Conduct</h3>
       <p>When using our services, you agree to:</p>
       <ul>
         <li>Provide accurate and complete information.</li>
-        <li>Comply with all applicable laws and regulations.</li>
+        <li>Comply with all applicable laws and regulations, including Indian data protection laws.</li>
         <li>Not use our services for any unlawful or prohibited purposes.</li>
         <li>Not infringe on the rights of others.</li>
         <li>Not disrupt or interfere with the security or functionality of our services.</li>
@@ -39,8 +40,10 @@ const TermsConditions = () => {
       <h3>8. Indemnification</h3>
       <p>You agree to indemnify, defend, and hold harmless ATRAINE, its affiliates, and their respective officers, directors, employees, and agents from any claims, liabilities, damages, and expenses arising out of or related to your use of our services.</p>
 
-      <h3>9. Governing Law</h3>
-      <p>These Terms & Conditions shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law principles.</p>
+      <h3>9. Governing Law and Dispute Resolution</h3>
+      <p>
+        These Terms & Conditions shall be governed by and construed in accordance with the laws of [Your Registered Jurisdiction in India], without regard to its conflict of law principles. In the event of a dispute arising out of or relating to these Terms & Conditions, you agree to attempt to resolve the dispute through informal negotiation. If the dispute is not resolved within a reasonable time (e.g., 30 days), you agree that the dispute shall be settled by binding arbitration in accordance with the Arbitration and Conciliation Act, 1996 (India).
+      </p>
 
       <h3>10. Contact Us</h3>
       <p>If you have any questions about these Terms & Conditions, please contact us:</p>
@@ -50,6 +53,6 @@ const TermsConditions = () => {
       </ul>
     </div>
   );
-}
+};
 
 export default TermsConditions;

@@ -1,14 +1,13 @@
-// client/src/CertificateSample.js
-
 import React from 'react';
 import './Certificate.css';
+import certificateImage from '../src/images/certificate.png'; // Import the certificate image
 
 const CertificateSample = () => {
   return (
     <div className="Certificate-container">
       <h1 style={{ marginBottom: '1rem' }}>Sample Certificate</h1>
       <img
-        src="https://i.pinimg.com/564x/f1/1f/e8/f11fe879f786a274b725daecff7f653b.jpg"
+        src={certificateImage} // Use the imported certificate image
         alt="Certificate Sample"
         className="Certificate-image"
       />

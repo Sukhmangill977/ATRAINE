@@ -1,14 +1,12 @@
-// client/src/Recommendation.js
-
 import React from 'react';
 import './Recommendation.css';
-
+import lorImage from '../src/images/lor.png'; // Import the image 
 const Recommendation = () => {
   return (
     <div className="recommendation-container">
       <h1>Recommendation Sample</h1>
       <img
-        src="https://leverageedu.com/blog/wp-content/uploads/2019/10/LOR-Sample-for-UG-Admission-724x1024.jpg"
+        src={lorImage} // Use imported image variable here
         alt="Recommendation Sample"
         className="recommendation-image"
       />

@@ -1,5 +1,3 @@
-/* client/src/Recommendation.css */
-
 .recommendation-container {
   text-align: center;
   padding: 2rem;
@@ -13,8 +11,8 @@
 }
 
 .recommendation-image {
-  max-width: 100%;
-  height: auto;
+  max-width: 80%; /* Adjust the percentage to reduce the image size */
+  height: 1000px;
   display: block;
   margin-top: 2rem; /* Adjust space between text and image */
 }

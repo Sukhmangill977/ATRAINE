@@ -14,7 +14,7 @@
 
 .Certificate-image {
   max-width: 100%;
-  height: auto;
+  height: 800px;
   display: block;
   margin-top: 2rem; /* Adjust space between text and image */
 }

@@ -32,7 +32,7 @@ const Profile = () => {
       <h2>Profile</h2>
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
-      <p>Bio: {user.bio}</p>
+      <p>Education Level: {user.EducationLevel}</p>
       <p>Age: {user.age}</p>
       <p>Address: {user.address}</p>
       <p>Phone: {user.phone}</p>
