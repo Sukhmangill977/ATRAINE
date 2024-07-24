@@ -12,7 +12,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://atraine.onrender.com/contacts/add', {
+      const response = await axios.post('http://localhost:5001//contacts/add', {
         name,
         email,
         message,

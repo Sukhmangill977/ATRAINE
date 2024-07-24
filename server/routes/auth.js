@@ -20,14 +20,14 @@ router.post(
       const myPlaintextPassword = req.body.password;
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(myPlaintextPassword, salt);
-      const { email, name, EducationLevel, age, address, phone, gender } = req.body;
+      const { email, name, bio, age, address, phone, gender } = req.body;
 
       try {
         const user = new User({
           name,
           email,
           password: hash,
-          EducationLevel,
+          bio,
           age,
           address,
           phone,
