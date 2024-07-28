@@ -23,9 +23,9 @@ const Home = () => {
         </div>
       </section>
       <section className="additional-content">
-        <div className="box left-box">
+        {/* <div className="box left-box">
           <ImageSlider />
-        </div>
+        </div> */}
         <div className="box right-box">
           <Link to="/perks" className="perks-link">Check Out Our Perks</Link>
         </div>

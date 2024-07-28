@@ -1,34 +1,57 @@
-.signup {
+/* client/src/SignUp.css */
+.signup-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background-image: url('https://images.pexels.com/photos/1181248/pexels-photo-1181248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover;
+  background-position: center;
+}
+
+.signup {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
   padding: 2rem;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem;
 }
 
 .signup h2 {
   margin-bottom: 1.5rem;
   color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 .signup form {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .signup-input,
 .signup-textarea,
-.signup-select {
+.signup-select,
+.signup-file {
   margin: 0.5rem 0;
   padding: 0.75rem;
-  width: 100%;
+  width: calc(100% - 1.5rem); /* Ensures all elements are the same size */
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.signup-input:focus,
+.signup-textarea:focus,
+.signup-select:focus,
+.signup-file:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .signup-button {
@@ -47,3 +70,82 @@
   background-color: #0056b3;
 }
 
+.signup-input::placeholder,
+.signup-textarea::placeholder,
+.signup-select::placeholder,
+.signup-file::placeholder {
+  color: #aaa;
+}
+
+.signup-textarea {
+  resize: none;
+  height: 100px;
+}
+
+.signup-select {
+  height: 42px;
+  padding: 0.75rem;
+  background-color: #fff;
+  appearance: none;
+}
+
+.google-form-link {
+  margin-top: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.google-form-link:hover {
+  color: #0056b3;
+}
+
+/* Custom file upload */
+.custom-file-upload {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.custom-file-upload input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.custom-file-upload label {
+  display: block;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.custom-file-upload label:hover {
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 480px) {
+  .signup {
+    padding: 1rem;
+  }
+
+  .signup h2 {
+    font-size: 1.25rem;
+  }
+
+  .signup-input,
+  .signup-textarea,
+  .signup-select,
+  .signup-file,
+  .signup-button {
+    font-size: 0.875rem;
+  }
+}

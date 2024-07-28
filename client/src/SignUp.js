@@ -1,3 +1,4 @@
+// client/src/SignUp.js
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -8,20 +9,30 @@ const SignUp = () => {
     name: "",
     email: "",
     password: "",
-    bio: "",
-    age: "",
-    address: "",
     phone: "",
-    gender: ""
+    gender: "",
+    FieldofInterest: "",
+    profilePhoto: null // Add this state for the profile photo
   });
+
+  const [fileName, setFileName] = useState("Upload Profile Photo"); // State to store file name
 
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
 
+    const formData = new FormData();
+    Object.keys(credentials).forEach(key => {
+      formData.append(key, credentials[key]);
+    });
+
     try {
-      const res = await axios.post('http://localhost:5001/api/auth/signup', credentials);
+      const res = await axios.post('http://localhost:5001/api/auth/signup', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
       if (res.status === 200) {
         navigate("/login");
       }
@@ -32,76 +43,89 @@ const SignUp = () => {
   };
 
   const handleChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    const { name, value, files } = e.target;
+    if (name === 'profilePhoto') {
+      setCredentials({ ...credentials, profilePhoto: files[0] });
+      setFileName(files[0].name); // Update the file name state
+    } else {
+      setCredentials({ ...credentials, [name]: value });
+    }
   };
 
   return (
-    <div className="signup">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignUp}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={credentials.name}
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={credentials.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={credentials.password}
-          onChange={handleChange}
-        />
-        <textarea
-          name="bio"
-          placeholder="Education Level"
-          value={credentials.bio}
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          name="age"
-          placeholder="Age"
-          value={credentials.age}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Address"
-          value={credentials.address}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone Number"
-          value={credentials.phone}
-          onChange={handleChange}
-        />
-        <select
-          name="gender"
-          value={credentials.gender}
-          onChange={handleChange}
-        >
-          <option value="">Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-        <button type="submit" className="signup-button">Sign Up</button>
-      </form>
+    <div className="signup-container">
+      <div className="signup">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSignUp} encType="multipart/form-data">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            className="signup-input"
+            value={credentials.name}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="signup-input"
+            value={credentials.email}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="signup-input"
+            value={credentials.password}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            className="signup-input"
+            value={credentials.phone}
+            onChange={handleChange}
+          />
+          <select
+            name="gender"
+            className="signup-select"
+            value={credentials.gender}
+            onChange={handleChange}
+          >
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <input
+            type="text"
+            name="FieldofInterest"
+            placeholder="Field of Interest"
+            className="signup-input"
+            value={credentials.FieldofInterest}
+            onChange={handleChange}
+          />
+          <div className="custom-file-upload">
+            <input
+              type="file"
+              name="profilePhoto"
+              id="profilePhoto"
+              className="signup-file"
+              onChange={handleChange}
+            />
+            <label htmlFor="profilePhoto">{fileName}</label>
+          </div>
+          <a href="https://docs.google.com/forms/d/your-google-form-id/viewform" target="_blank" rel="noopener noreferrer" className="google-form-link">
+            Fill out our Google Form
+          </a>
+          <button type="submit" className="signup-button">Sign Up</button>
+        </form>
+      </div>
     </div>
   );
 };
 
 export default SignUp;
-

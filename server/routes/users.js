@@ -1,4 +1,3 @@
-// routes/users.js
 const express = require('express');
 const User = require('../models/User');
 const auth = require('../middleware/auth');
@@ -25,4 +24,3 @@ router.get('/profile', auth, async (req, res) => {
 });
 
 module.exports = router;
-

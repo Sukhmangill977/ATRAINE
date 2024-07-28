@@ -12,7 +12,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001//contacts/add', {
+      const response = await axios.post('http://localhost:5001/contacts/add', {
         name,
         email,
         message,
@@ -27,16 +27,18 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
-      <h2>Contact Us</h2>
-      <p>If you have any questions or need further information, feel free to reach out to us.</p>
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <input type="text" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} required />
-        <input type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <textarea placeholder="Your Message" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      {responseMessage && <p className="response-message">{responseMessage}</p>}
+    <div className="contact-container">
+      <div className="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further information, feel free to reach out to us.</p>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input type="text" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} required />
+          <input type="email" placeholder="Your Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <textarea placeholder="Your Message" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        {responseMessage && <p className="response-message">{responseMessage}</p>}
+      </div>
     </div>
   );
 }

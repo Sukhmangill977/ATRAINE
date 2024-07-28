@@ -1,41 +1,20 @@
 // models/User.js
+
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  bio: {
-    type: String,
-    default: ''
-  },
-  age: {
-    type: Number,
-    default: null
-  },
-  address: {
-    type: String,
-    default: ''
-  },
-  phone: {
-    type: String,
-    default: ''
-  },
-  gender: {
-    type: String,
-    default: ''
-  }
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  // bio: { type: String },
+  // age: { type: Number },
+  // address: { type: String },
+  phone: { type: String },
+  gender: { type: String },
+  FieldofInterest: { type: String },
+  profilePhoto: { type: String } // Field to store Base64 string
 });
 
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
 
+module.exports = User;
