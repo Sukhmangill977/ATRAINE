@@ -12,6 +12,16 @@ const TrainingDetails45Days = () => {
         <p>
           ATRAINE offers a comprehensive 45-day internship program designed to immerse you in your chosen technology stack. During the internship, you will work on practical assignments and projects, gaining hands-on experience under the guidance of industry experts. Regular evaluations will track your progress, ensuring you meet our high standards. Upon successful completion, you will receive a Letter of Recommendation (LOR) and a Certificate of Completion.
         </p>
+        <h2>Courses Offered:</h2>
+        <ul>
+          <li>MERN (MongoDB, Express.js, React.js, Node.js)</li>
+          <li>C++ Programming</li>
+          <li>DevOps Practices</li>
+          <li>Web Development</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Web Semantics</li>
+        </ul>
         <a href={googleFormLink} target="_blank" rel="noopener noreferrer">Apply Now</a>
       </div>
       <div className="training-box">
@@ -19,6 +29,16 @@ const TrainingDetails45Days = () => {
         <p>
           ATRAINE offers a structured 45-day training program tailored to enhance your skills in your chosen technology stack. The training includes intensive teaching sessions and practical assignments to deepen your understanding and proficiency. You will receive personalized feedback and guidance from our instructors throughout the training. Upon completion, you will be awarded a Letter of Recommendation (LOR) and a Certificate of Completion.
         </p>
+        <h2>Courses Offered:</h2>
+        <ul>
+          <li>MERN (MongoDB, Express.js, React.js, Node.js)</li>
+          <li>C++ Programming</li>
+          <li>DevOps Practices</li>
+          <li>Web Development</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Web Semantics</li>
+        </ul>
         <a href={googleFormLink} target="_blank" rel="noopener noreferrer">Apply Now</a>
       </div>
     </div>

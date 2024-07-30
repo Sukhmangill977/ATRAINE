@@ -1,11 +1,15 @@
-/* client/src/Profile.css */
+/* Profile CSS */
 body {
+  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+}
+
+.profile-background {
   background-image: url('https://images.pexels.com/photos/4006182/pexels-photo-4006182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh; /* Ensures the background covers the full page height */
 }
 
 .profile-container {
@@ -14,7 +18,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   max-width: 400px;

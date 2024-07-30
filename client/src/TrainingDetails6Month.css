@@ -1,48 +1,58 @@
 /* client/src/TrainingDetails6Month.css */
 
 .training-details {
-    display: flex;
-    justify-content: space-around;
-    padding: 4rem 2rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 40vh;
-  }
-  
-  .internship-box, .training-box {
-    max-width: 600px;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .internship-box h1, .training-box h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .internship-box p, .training-box p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.8;
-  }
-  
-  .internship-box a, .training-box a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .internship-box a:hover, .training-box a:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 40vh;
+}
+
+.internship-box, .training-box {
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.internship-box h1, .training-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.internship-box p, .training-box p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.internship-box ul, .training-box ul {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+.internship-box li, .training-box li {
+  margin-bottom: 0.5rem;
+}
+
+.internship-box a, .training-box a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.internship-box a:hover, .training-box a:hover {
+  background-color: #0056b3;
+}
