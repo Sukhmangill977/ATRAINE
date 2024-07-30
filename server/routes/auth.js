@@ -25,7 +25,7 @@ router.post(
       const myPlaintextPassword = req.body.password;
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(myPlaintextPassword, salt);
-      const { email, name, EducationLevel, age, address, phone, gender, FieldofInterest } = req.body;
+      const { email, name, phone, gender, FieldofInterest } = req.body;
 
       // Convert the uploaded file to Base64 string
       let profilePhoto = null;
@@ -38,9 +38,6 @@ router.post(
         name,
         email,
         password: hash,
-        // bio: EducationLevel, // Update `bio` field to `EducationLevel`
-        // age,
-        // address,
         phone,
         gender,
         FieldofInterest,

@@ -1,25 +1,19 @@
 const express = require('express');
-const User = require('../models/User');
-const auth = require('../middleware/auth');
-
 const router = express.Router();
+const User = require('../models/User');
+const verifyToken = require('../middleware/verifyToken');
 
-// Get user profile
-router.get('/profile', auth, async (req, res) => {
+// Route to fetch user profile
+router.get('/profile', verifyToken, async (req, res) => {
   try {
-    const email = req.email
-    const user = await User.findOne({ email }).select('-password');
-    console.log(user)
-
+    const user = await User.findOne({ email: req.user.email });
     if (!user) {
-      return res.status(404).json({ msg: 'User not found' });
+      return res.status(404).json({ success: false, message: 'User not found' });
     }
-
-    // Send user profile data
-    res.json(user);
+    res.status(200).json(user);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Server error' });
   }
 });
 
