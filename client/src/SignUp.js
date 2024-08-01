@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import './SignUp.css'; // Import the CSS file
+import { useNavigate, Link } from "react-router-dom";
+import './SignUp.css';
 
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
@@ -10,17 +10,15 @@ const SignUp = () => {
     password: "",
     phone: "",
     gender: "",
-    FieldofInterest: "", // Ensure this matches the field name in the model
-    profilePhoto: null // Add this state for the profile photo
+    FieldofInterest: "",
+    profilePhoto: null
   });
 
-  const [fileName, setFileName] = useState("Upload Profile Photo"); // State to store file name
-
+  const [fileName, setFileName] = useState("Upload Profile Photo");
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-
     const formData = new FormData();
     Object.keys(credentials).forEach(key => {
       formData.append(key, credentials[key]);
@@ -45,7 +43,7 @@ const SignUp = () => {
     const { name, value, files } = e.target;
     if (name === 'profilePhoto') {
       setCredentials({ ...credentials, profilePhoto: files[0] });
-      setFileName(files[0].name); // Update the file name state
+      setFileName(files[0].name);
     } else {
       setCredentials({ ...credentials, [name]: value });
     }
@@ -117,10 +115,12 @@ const SignUp = () => {
             />
             <label htmlFor="profilePhoto">{fileName}</label>
           </div>
-          <a href="https://docs.google.com/forms/d/your-google-form-id/viewform" target="_blank" rel="noopener noreferrer" className="google-form-link">
-            Fill out our Google Form
-          </a>
-          <button type="submit" className="signup-button">Sign Up</button>
+          <Link to="/internship-form" className="google-form-link">
+            Fill out our Internship/Training Application Form
+          </Link>
+          <button type="submit" className="signup-button">
+            Sign Up
+          </button>
         </form>
       </div>
     </div>

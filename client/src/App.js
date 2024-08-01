@@ -19,6 +19,7 @@ import TermsAndConditions from './TermsAndConditions';  // Import TermsAndCondit
 import Login from './Login';
 import SignUp from './SignUp';
 import Profile from './Profile';
+import InternshipForm from './InternshipForm';
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/internship-form" element={<InternshipForm />} />
           </Routes>
         </div>
         <Footer />

@@ -1,19 +1,21 @@
+// server/routes/users.js
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
-const verifyToken = require('../middleware/verifyToken');
+const verifyToken = require('../middleware/verifyToken'); // Adjust the path if necessary
+const User = require('../models/User'); // Adjust the path if necessary
 
-// Route to fetch user profile
 router.get('/profile', verifyToken, async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.user.email });
+    const email = req.email
+    console.log(email)
+    const user = await User.findOne({email : email})
     if (!user) {
-      return res.status(404).json({ success: false, message: 'User not found' });
+      return res.status(404).json({ message: 'User not found' });
     }
-    res.status(200).json(user);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ success: false, message: 'Server error' });
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 
