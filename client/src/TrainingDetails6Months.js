@@ -1,6 +1,7 @@
 // client/src/TrainingDetails6Month.js
 import React from 'react';
 import './TrainingDetails6Month.css';
+import { Link } from 'react-router-dom'; 
 
 const googleFormLink = "https://docs.google.com/forms/your-google-form-link"; // Replace with your actual Google Form link
 
@@ -19,7 +20,7 @@ const TrainingDetails6Month = () => {
           <li>DevOps Practices</li>
           <li>Web Development</li>
         </ul>
-        <a href={googleFormLink} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <li><Link to="/signup">Apply Now</Link></li><li><Link to="/signup">Apply Now</Link></li>
       </div>
       <div className="training-box">
         <h1>Training for 6 Months</h1>
@@ -33,7 +34,7 @@ const TrainingDetails6Month = () => {
           <li>DevOps Practices</li>
           <li>Web Development</li>
         </ul>
-        <a href={googleFormLink} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <li><Link to="/signup">Apply Now</Link></li>
       </div>
     </div>
   );
