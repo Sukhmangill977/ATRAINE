@@ -4,7 +4,7 @@ import './TrainingDetails1Month.css';
 import { Link } from 'react-router-dom'; 
 
 
-const googleFormLink = "https://docs.google.com/forms/your-google-form-link"; // Replace with your actual Google Form link
+// const googleFormLink = "https://docs.google.com/forms/your-google-form-link"; // Replace with your actual Google Form link
 
 const TrainingDetails1Month = () => {
   return (
