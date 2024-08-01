@@ -1,3 +1,4 @@
+
 /* Profile CSS */
 body {
   background-color: #f4f4f4;
@@ -41,4 +42,18 @@ body {
 .profile-container p {
   margin: 0.5rem 0;
   color: #555;
+}
+
+.logout-button {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #ff3b4c;
 }
