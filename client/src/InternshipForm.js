@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import './InternshipForm.css';
+import './InternshipForm.css'; 
+import paytm from "../src/images/paytm.png"
 
 const InternshipForm = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ const InternshipForm = () => {
     comments: "",
     consent: false,
     agreement: false,
+    paymentScreenshot: null // Add paymentScreenshot to formData state
   });
 
   const navigate = useNavigate();
@@ -31,8 +33,8 @@ const InternshipForm = () => {
     const { name, value, type, checked, files } = e.target;
     if (type === 'checkbox') {
       setFormData({ ...formData, [name]: checked });
-    } else if (name === 'resume') {
-      setFormData({ ...formData, resume: files[0] });
+    } else if (name === 'resume' || name === 'paymentScreenshot') {
+      setFormData({ ...formData, [name]: files[0] });
     } else {
       setFormData({ ...formData, [name]: value });
     }
@@ -91,18 +93,26 @@ const InternshipForm = () => {
         <textarea name="experience" placeholder="Previous Internship/Training Experience" value={formData.experience} onChange={handleChange} required></textarea>
         <input type="file" name="resume" onChange={handleChange} required />
 
+        <h3>Payment Information</h3>
+        <div className="qr-code-section">
+          <p>Scan the QR code below to make the payment.</p> 
+          <img src={paytm} alt="QR Code" className="qr-code-image" />
+          Add the payment screenshot below
+          <input type="file" name="paymentScreenshot" onChange={handleChange} required /> 
+        </div>
+
         <h3>Additional Information</h3>
         <input type="url" name="portfolio" placeholder="Portfolio/LinkedIn Profile" value={formData.portfolio} onChange={handleChange} required />
         <textarea name="comments" placeholder="Additional Comments or Questions" value={formData.comments} onChange={handleChange}></textarea>
 
         <h3>Consent and Agreement</h3>
         <label>
-          <input type="checkbox" name="consent" checked={formData.consent} onChange={handleChange} required />
           I consent to the collection of my data for the purpose of this application.
+          <input type="checkbox" name="consent" checked={formData.consent} onChange={handleChange} required />
         </label>
         <label>
-          <input type="checkbox" name="agreement" checked={formData.agreement} onChange={handleChange} required />
           I agree to the terms and conditions of the internship/training program.
+          <input type="checkbox" name="agreement" checked={formData.agreement} onChange={handleChange} required />
         </label>
 
         <button type="submit">Submit</button>

@@ -8,17 +8,24 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 // Handle form submission
-router.post("/apply", upload.single('resume'), async (req, res) => {
+router.post("/apply", upload.fields([{ name: 'resume', maxCount: 1 }, { name: 'paymentScreenshot', maxCount: 1 }]), async (req, res) => {
   try {
     const formData = req.body;
     let resume = null;
-    if (req.file) {
-      resume = req.file.buffer.toString('base64');
+    let paymentScreenshot = null;
+
+    // Convert files to base64 if they exist
+    if (req.files['resume']) {
+      resume = req.files['resume'][0].buffer.toString('base64');
+    }
+    if (req.files['paymentScreenshot']) {
+      paymentScreenshot = req.files['paymentScreenshot'][0].buffer.toString('base64');
     }
 
     const newInternship = new Internship({
       ...formData,
-      resume
+      resume,
+      paymentScreenshot // Include the paymentScreenshot in the newInternship object
     });
 
     await newInternship.save();

@@ -41,7 +41,7 @@ const Profile = () => {
     navigate('/login'); // Redirect to the login page
   };
 
-  if (!user) return <div>Loading...</div>;
+  if (!user) return <div>Login</div>;
 
   return (
     <div className="profile-background">

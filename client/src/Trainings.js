@@ -17,11 +17,11 @@ const Trainings = () => {
           <p>Intermediate program to deepen your knowledge and skills.</p>
           <Link to="/trainings/45-days" className="more-info-button">More Info</Link>
         </div>
-        <div className="training-item">
+        {/* <div className="training-item">
           <h3>6 Months Internship/Training</h3>
           <p>Comprehensive program for an in-depth learning experience.</p>
           <Link to="/trainings/6-months" className="more-info-button">More Info</Link>
-        </div>
+        </div> */}
         <div className="training-item">
           <h3>Perks for You</h3>
           <p>

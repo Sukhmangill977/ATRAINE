@@ -20,7 +20,7 @@ const TrainingDetails6Month = () => {
           <li>DevOps Practices</li>
           <li>Web Development</li>
         </ul>
-        <li><Link to="/signup">Apply Now</Link></li><li><Link to="/signup">Apply Now</Link></li>
+        <li><Link to="/signup">Apply Now</Link></li>
       </div>
       <div className="training-box">
         <h1>Training for 6 Months</h1>

@@ -1,9 +1,6 @@
-// client/src/TrainingDetails45Days.js
 import React from 'react';
 import './TrainingDetails45days.css';
 import { Link } from 'react-router-dom'; 
-
-// const googleFormLink = "https://docs.google.com/forms/your-google-form-link"; // Replace with your actual Google Form link
 
 const TrainingDetails45Days = () => {
   return (
@@ -23,6 +20,7 @@ const TrainingDetails45Days = () => {
           <li>Python</li>
           <li>Web Semantics</li>
         </ul>
+        <h3>Enrollment Fee: ₹2500</h3>
         <li><Link to="/signup">Apply Now</Link></li>
       </div>
       <div className="training-box">
@@ -40,6 +38,7 @@ const TrainingDetails45Days = () => {
           <li>Python</li>
           <li>Web Semantics</li>
         </ul>
+        <h3>Enrollment Fee: ₹3000</h3>
         <li><Link to="/signup">Apply Now</Link></li>
       </div>
     </div>

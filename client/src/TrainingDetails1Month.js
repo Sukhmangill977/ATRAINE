@@ -23,6 +23,7 @@ const TrainingDetails1Month = () => {
             <li>C++</li>
             <li>DevOps</li>
             <li>Web Semantics</li>
+            <h3>Enrollment Fee: ₹1500</h3>
           </ul>
         </p>
         <li><Link to="/signup">Apply Now</Link></li>
@@ -41,6 +42,7 @@ const TrainingDetails1Month = () => {
             <li>C++</li>
             <li>DevOps</li>
             <li>Web Semantics</li>
+            <h3>Enrollment Fee: ₹2000</h3>
           </ul>
         </p>
         <li><Link to="/signup">Apply Now</Link></li>

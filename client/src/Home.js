@@ -1,7 +1,7 @@
 // client/src/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ImageSlider from './ImageSlider';
+// import ImageSlider from './ImageSlider';
 import './Home.css';
 
 const Home = () => {
