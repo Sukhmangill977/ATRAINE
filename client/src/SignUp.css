@@ -1,4 +1,4 @@
-/* client/src/SignUp.css */
+/* SignUp CSS */
 .signup-container {
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@
 }
 
 .signup h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced margin to make space for the link */
   color: #333;
   font-size: 1.5rem;
   text-align: center;
@@ -33,8 +33,29 @@
   flex-direction: column;
 }
 
+.google-form-link {
+  margin-bottom: 1rem; /* Added margin for spacing below the link */
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between the icon and text */
+  transition: color 0.3s ease;
+}
+
+.google-form-link:hover {
+  color: #0056b3;
+}
+
+.google-form-link svg {
+  width: 1rem; /* Size of the arrow icon */
+  height: 1rem;
+  fill: currentColor;
+}
+
+
 .signup-input,
-.signup-textarea,
 .signup-select,
 .signup-file {
   margin: 0.5rem 0;
@@ -47,7 +68,6 @@
 }
 
 .signup-input:focus,
-.signup-textarea:focus,
 .signup-select:focus,
 .signup-file:focus {
   border-color: #007bff;
@@ -68,37 +88,6 @@
 
 .signup-button:hover {
   background-color: #0056b3;
-}
-
-.signup-input::placeholder,
-.signup-textarea::placeholder,
-.signup-select::placeholder,
-.signup-file::placeholder {
-  color: #aaa;
-}
-
-.signup-textarea {
-  resize: none;
-  height: 100px;
-}
-
-.signup-select {
-  height: 42px;
-  padding: 0.75rem;
-  background-color: #fff;
-  appearance: none;
-}
-
-.google-form-link {
-  margin-top: 1rem;
-  color: #007bff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.google-form-link:hover {
-  color: #0056b3;
 }
 
 /* Custom file upload */
@@ -142,7 +131,6 @@
   }
 
   .signup-input,
-  .signup-textarea,
   .signup-select,
   .signup-file,
   .signup-button {

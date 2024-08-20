@@ -1,21 +1,30 @@
-// server/routes/users.js
+// Assuming this is in your auth middleware or the relevant route file
 const express = require('express');
 const router = express.Router();
-const verifyToken = require('../middleware/verifyToken'); // Adjust the path if necessary
-const User = require('../models/User'); // Adjust the path if necessary
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
 
-router.get('/profile', verifyToken, async (req, res) => {
+// Middleware to authenticate token and attach user to request
+const authenticateToken = (req, res, next) => {
+  const token = req.headers['token'];
+  if (!token) return res.sendStatus(401);
+  
+  jwt.verify(token, process.env.JWT_TOKEN, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+};
+
+// Get user profile
+router.get('/profile', authenticateToken, async (req, res) => {
   try {
-    const email = req.email
-    console.log(email)
-    const user = await User.findOne({email : email})
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
+    const user = await User.findOne({ email: req.user.email });
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
     res.json(user);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    console.error('Error fetching user profile:', error);
+    res.status(500).json({ success: false, message: 'Server error' });
   }
 });
 

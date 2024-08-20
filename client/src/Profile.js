@@ -60,23 +60,25 @@ const Profile = () => {
         <h2>Internship Applications</h2>
         {applications.length > 0 ? (
           applications.map(app => (
-            <div key={app._id} className="application">
-              <h3>Application for {app.preferredProgram}</h3>
-              <p><strong>Full Name:</strong> {app.fullName}</p>
-              <p><strong>Email:</strong> {app.email}</p>
-              <p><strong>Phone:</strong> {app.phone}</p>
-              <p><strong>Address:</strong> {app.address}</p>
-              <p><strong>Institution:</strong> {app.institution}</p>
-              <p><strong>Degree:</strong> {app.degree}</p>
-              <p><strong>Year of Study:</strong> {app.yearOfStudy}</p>
-              <p><strong>Preferred Start Date:</strong> {app.startDate}</p>
-              <p><strong>Preferred End Date:</strong> {app.endDate}</p>
-              <p><strong>Areas of Interest:</strong> {app.interestAreas}</p>
-              <p><strong>Skills:</strong> {app.skills}</p>
-              <p><strong>Previous Experience:</strong> {app.experience}</p>
-              <p><strong>Portfolio:</strong> {app.portfolio}</p>
-              <p><strong>Comments:</strong> {app.comments}</p>
-            </div>
+            app.email === user.email && (
+              <div key={app._id} className="application">
+                <h3>Application for {app.preferredProgram}</h3>
+                <p><strong>Full Name:</strong> {app.fullName}</p>
+                <p><strong>Email:</strong> {app.email}</p>
+                <p><strong>Phone:</strong> {app.phone}</p>
+                <p><strong>Address:</strong> {app.address}</p>
+                <p><strong>Institution:</strong> {app.institution}</p>
+                <p><strong>Degree:</strong> {app.degree}</p>
+                <p><strong>Year of Study:</strong> {app.yearOfStudy}</p>
+                <p><strong>Preferred Start Date:</strong> {app.startDate}</p>
+                <p><strong>Preferred End Date:</strong> {app.endDate}</p>
+                <p><strong>Areas of Interest:</strong> {app.interestAreas}</p>
+                <p><strong>Skills:</strong> {app.skills}</p>
+                <p><strong>Previous Experience:</strong> {app.experience}</p>
+                <p><strong>Portfolio:</strong> {app.portfolio}</p>
+                <p><strong>Comments:</strong> {app.comments}</p>
+              </div>
+            )
           ))
         ) : (
           <p>No applications found.</p>

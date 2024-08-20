@@ -53,6 +53,12 @@ const SignUp = () => {
     <div className="signup-container">
       <div className="signup">
         <h2>Sign Up</h2>
+        <Link to="/internship-form" className="google-form-link">
+          <svg width="16" height="16" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
+            <path d="M5.646 4.646a.5.5 0 0 1 .708 0L11 8.293 6.354 12.646a.5.5 0 0 1-.708-.708L10.293 8 5.646 4.646a.5.5 0 0 1 0-.708z"/>
+          </svg>
+          Fill out our Internship/Training Application Form
+        </Link>
         <form onSubmit={handleSignUp} encType="multipart/form-data">
           <input
             type="text"
@@ -115,9 +121,6 @@ const SignUp = () => {
             />
             <label htmlFor="profilePhoto">{fileName}</label>
           </div>
-          <Link to="/internship-form" className="google-form-link">
-            Fill out our Internship/Training Application Form
-          </Link>
           <button type="submit" className="signup-button">
             Sign Up
           </button>
