@@ -19,7 +19,7 @@ const port = process.env.PORT || 5001;
 const corsOptions = {
   origin: 'https://atraine.vercel.app', // Replace with your frontend domain
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: 'Content-Type,Authorization',
+  allowedHeaders: 'Content-Type,Authorization,token', // Add 'token' to allowed headers
 };
 
 app.use(cors(corsOptions));
@@ -39,7 +39,7 @@ app.use('/contacts', contactsRouter);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/internships', internshipsRouter); // Make sure this line exists
+app.use('/api/internships', internshipsRouter); // Ensure this route exists
 
 app.get('/', (req, res) => {
   res.send('Hello from ATRAINE backend!');
