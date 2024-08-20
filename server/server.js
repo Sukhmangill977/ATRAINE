@@ -4,7 +4,6 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 
-
 const authRouter = require('./routes/auth');
 const trainingsRouter = require('./routes/trainings');
 const contactsRouter = require('./routes/contacts');
@@ -16,11 +15,17 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5001;
 
-// Middleware
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: 'https://atraine.vercel.app', // Replace with your frontend domain
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
-// Connect to MongoDB`
+// Connect to MongoDB
 const uri = process.env.MONGO_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = mongoose.connection;
