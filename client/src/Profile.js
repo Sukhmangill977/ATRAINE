@@ -17,7 +17,7 @@ const Profile = () => {
           return;
         }
 
-        const userRes = await axios.get('http://localhost:5001/api/users/profile', {
+        const userRes = await axios.get('https://atraine.onrender.com/api/users/profile/', {
           headers: {
             'token': token
           }
