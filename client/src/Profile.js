@@ -23,7 +23,7 @@ const Profile = () => {
           }
         });
 
-        const applicationsRes = await axios.get('http://localhost:5001/api/internships/applications', {
+        const applicationsRes = await axios.get('https://atraine.onrender.com/api/internships/applications', {
           headers: {
             'token': token
           }

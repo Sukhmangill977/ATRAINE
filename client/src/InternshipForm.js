@@ -46,9 +46,8 @@ const InternshipForm = () => {
     Object.keys(formData).forEach(key => {
       form.append(key, formData[key]);
     });
-
     try {
-      const res = await axios.post('http://localhost:5001/api/internships/apply', form, {
+      const res = await axios.post('https://atraine.onrender.com/internships/apply', form, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
