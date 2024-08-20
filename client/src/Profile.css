@@ -1,5 +1,4 @@
-
-/* Profile CSS */
+/* Profile.css */
 body {
   background-color: #f4f4f4;
   font-family: 'Arial', sans-serif;
@@ -10,33 +9,33 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh; /* Ensures the background covers the full page height */
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  max-width: 400px;
-  margin: 3rem auto; /* Add margin to move the profile box down */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
 }
 
 .profile-container h2 {
-  margin-bottom: 1.5rem;
   color: #333;
+  margin-bottom: 1.5rem;
 }
 
 .profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+  border: 2px solid #ddd;
 }
 
 .profile-container p {
@@ -44,16 +43,33 @@ body {
   color: #555;
 }
 
+.application {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
 .logout-button {
   background-color: #ff4b5c;
   color: white;
   border: none;
   padding: 10px 20px;
-  margin-top: 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .logout-button:hover {
   background-color: #ff3b4c;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #333;
 }
