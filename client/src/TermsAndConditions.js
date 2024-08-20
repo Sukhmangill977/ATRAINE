@@ -48,7 +48,7 @@ const TermsConditions = () => {
       <h3>10. Contact Us</h3>
       <p>If you have any questions about these Terms & Conditions, please contact us:</p>
       <ul>
-        <li>By email: email-atraine@gmail.com</li>
+        <li>By email: email-bluehorse000006@gmail.com</li>
         <li>By visiting this page on our website: <Link to="/contact">Contact Us</Link></li>
       </ul>
     </div>

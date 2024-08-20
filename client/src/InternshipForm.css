@@ -29,6 +29,7 @@
 .form-container label {
   margin-bottom: 0.5rem;
   color: #555;
+  display: block; /* Ensure label is block to align properly with inputs */
 }
 
 .form-container button {

@@ -77,7 +77,7 @@ const PrivacyPolicy = () => {
         If you have any questions about this Privacy Policy, or if you wish to exercise any of your data protection rights, please contact us:
       </p>
       <ul>
-        <li>By email: email-atraine@gmail.com</li>
+        <li>By email: email-abluehorse000006@gmail.com</li>
         <li>By visiting this page on our website: <Link to="/contact">Contact Us</Link></li>
       </ul>
     </div>

@@ -90,14 +90,15 @@ const InternshipForm = () => {
         <h3>Skills and Experience</h3>
         <input type="text" name="skills" placeholder="Relevant Skills" value={formData.skills} onChange={handleChange} required />
         <textarea name="experience" placeholder="Previous Internship/Training Experience" value={formData.experience} onChange={handleChange} required></textarea>
-        <input type="file" name="resume" onChange={handleChange} required />
+        <label htmlFor="resume">Upload Resume</label>
+        <input type="file" name="resume" id="resume" onChange={handleChange} required />
 
         <h3>Payment Information</h3>
         <div className="qr-code-section">
           <p>Scan the QR code below to make the payment.</p> 
           <img src={paytm} alt="QR Code" className="qr-code-image" />
-          Add the payment screenshot below
-          <input type="file" name="paymentScreenshot" onChange={handleChange} required /> 
+          <label htmlFor="paymentScreenshot">Add the payment screenshot below</label>
+          <input type="file" name="paymentScreenshot" id="paymentScreenshot" onChange={handleChange} required /> 
         </div>
 
         <h3>Additional Information</h3>

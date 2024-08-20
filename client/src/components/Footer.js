@@ -17,10 +17,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-column">
-          <h4>Our Other Products</h4>
+          <h4>Email</h4>
           <ul>
-            <li><Link to="/other-products">Other Products</Link></li>
-            <li><a href="mailto:atraine@gmail.com">atraine@gmail.com</a></li>
+            {/* <li><Link to="/other-products">Other Products</Link></li> */}
+            <li><a href="mailto:bluehorse000006@gmail.com">bluehorse000006@gmail.com</a></li>
           </ul>
         </div>
         <div className="footer-column">
