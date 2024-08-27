@@ -47,7 +47,7 @@ const InternshipForm = () => {
       form.append(key, formData[key]);
     });
     try {
-      const res = await axios.post('http://localhost:5001/internships/apply', form, {
+      const res = await axios.post('internships/apply', form, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

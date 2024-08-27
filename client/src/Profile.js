@@ -17,13 +17,13 @@ const Profile = () => {
           return;
         }
 
-        const userRes = await axios.get('http://localhost:5001/api/users/profile/', {
+        const userRes = await axios.get('api/users/profile/', {
           headers: {
             'token': token
           }
         });
 
-        const applicationsRes = await axios.get('http://localhost:5001/api/internships/applications', {
+        const applicationsRes = await axios.get('api/internships/applications', {
           headers: {
             'token': token
           }
