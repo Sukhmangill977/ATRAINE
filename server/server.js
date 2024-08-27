@@ -17,7 +17,7 @@ const port = process.env.PORT || 5001;
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://atraine.vercel.app', // Replace with your frontend domain
+  origin: true, // Allow all origins
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: 'Content-Type,Authorization,token', // Add 'token' to allowed headers
 };
@@ -33,16 +33,22 @@ connection.once('open', () => {
   console.log('MongoDB database connection established successfully');
 });
 
-// Routes
-app.use('/trainings', trainingsRouter);
-app.use('/contacts', contactsRouter);
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Serve static files from the React frontend build
+app.use(express.static(path.join(__dirname, '/client/build')));
+
+// API Routes
+app.use('/api/trainings', trainingsRouter);
+app.use('/api/contacts', contactsRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/internships', internshipsRouter); // Ensure this route exists
 
-app.get('/', (req, res) => {
-  res.send('Hello from ATRAINE backend!');
+// Uploads directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Fallback to serve the frontend app for any route not handled by the API
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
 // Listen on port

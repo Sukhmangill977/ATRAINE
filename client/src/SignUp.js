@@ -25,7 +25,7 @@ const SignUp = () => {
     });
 
     try {
-      const res = await axios.post('https://atraine.onrender.com/api/auth/signup', formData, {
+      const res = await axios.post('http://localhost:5001/api/auth/signup', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
