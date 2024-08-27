@@ -34,7 +34,7 @@ connection.once('open', () => {
 });
 
 // Serve static files from the React frontend build
-app.use(express.static(path.join(__dirname, '/client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // API Routes
 app.use('/api/trainings', trainingsRouter);
